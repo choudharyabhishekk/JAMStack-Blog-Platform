@@ -9,10 +9,7 @@ export const GET_ALL_POSTS = gql`
         date
         featuredImageCollection {
           items {
-            url # Access the URL directly on the Asset
-            # Or, if you need other fields from the Asset:
-            # title
-            # description
+            url
           }
         }
       }
@@ -27,8 +24,11 @@ export const GET_POST_BY_SLUG = gql`
         title
         date
         content
-        featuredImage {
-          url
+        featuredImageCollection {
+          # Use featuredImageCollection
+          items {
+            url # Access url directly
+          }
         }
       }
     }
